@@ -1,14 +1,14 @@
 # React-Code-Challenge2-Bot-Battlr
 
-## Bank of Flatiron App
+## Bot Battlr App
 
 ##### Created By Peggy Kimotho
 
 ## Description
 
-Bank of Flatiron App is a mini web app that displays a list of your recent bank transactions. 
+Bot Battlr is a mini web app where you can custom-build your own Bot Army!
 
-On the app, you can fill out and submit the form to add a new transaction. This will add the new transaction to the table. You can also filter transactions by typing into the search bar to get a particular transaction.
+On the app, you can browse through a list of different bots, view a bot's details and select a bot to add it to your army.
 
 ## Technologies Used
 
