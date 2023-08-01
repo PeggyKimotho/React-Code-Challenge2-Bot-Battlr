@@ -1,0 +1,35 @@
+
+
+.bot-list-container {
+  display: flex;
+  flex-wrap: wrap;  
+  gap: 20px;
+}
+
+.bot-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 390px;
+  
+}
+
+.bot-card img {
+  max-width: 100%;
+  height: auto;
+  background-color: #efefef;
+}
+
+
+
+.your-bot-army {
+  background-color: #a9c31e;
+  padding: 20px;
+  height: 500px;
+}
+
+.bot-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
