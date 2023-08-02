@@ -6,14 +6,13 @@ function BotCollection({ bots, enlistBot, onSelectBot }) {
   return (
     
     <div>
-    <h2>Available Bots</h2>
+    <h1>Available Bots</h1>
     <div className="bot-list-container">
       {bots.map((bot) => (
           <BotCard 
           key={bot.id} 
           bot={bot} 
           enlistBot={enlistBot}
-          buttonText="Show Specs"
           onClickButton={() => onSelectBot(bot)}
           
           />

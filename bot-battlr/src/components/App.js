@@ -12,8 +12,6 @@ function App() {
   const [selectedBot, setSelectedBot] = useState(null); //selected for view specs
     // State to track whether a bot has been enlisted to show/hide the "Enlist" button
     const [enlisted, setEnlisted] = useState(false);
-    // State to toggle the "Show Specs" view
-  const [showSpecsView, setShowSpecsView] = useState(false);
 
 
   //Fetch
@@ -61,7 +59,6 @@ function App() {
     const handleSelectBot = (bot) => {
     setSelectedBot(bot);
     setEnlisted(false); // Reset enlisted state when displaying specifications
-    setShowSpecsView(true) //Show the Show specs view
     };
 
       // Function to handle enlisting a bot and return to the homepage
@@ -69,15 +66,8 @@ function App() {
     enlistBot(bot);
     setSelectedBot(null) //go back to homepage
     // setEnlisted(true); // Set enlisted state to show "Enlist" button
-    // setShowSpecsView(false) // Return to the homepage after enlisting
   };
 
-    // Function to go back to the home page
-    const handleGoBack = () => {
-    setSelectedBot(null);
-    setShowSpecsView(false) 
-    
-    };
 
 
 
@@ -89,8 +79,7 @@ function App() {
         
           {selectedBot ? (
             <div>
-              <button onClick={handleGoBack}>Go Back</button>
-              <BotCard bot={selectedBot} enlistBot={handleEnlistBot} showEnlistButton={!enlisted} showSpecsView={showSpecsView} />
+              <BotCard bot={selectedBot} enlistBot={handleEnlistBot} showEnlistButton={!enlisted} />
             </div>
           ) : (
             // Show bot collection

@@ -9,7 +9,8 @@
 .bot-card {
   border: 1px solid #ccc;
   padding: 10px;
-  width: 390px;
+  width: 200px;
+  background-color: white;
   
 }
 
@@ -22,9 +23,9 @@
 
 
 .your-bot-army {
-  background-color: #a9c31e;
+  background-color: rgb(236, 178, 236);
   padding: 20px;
-  height: 500px;
+  
 }
 
 .bot-list {
@@ -32,4 +33,6 @@
   flex-wrap: wrap;
 }
 
-
+h1 {
+  text-align: center;
+}

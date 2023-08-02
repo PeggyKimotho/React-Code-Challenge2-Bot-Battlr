@@ -1,6 +1,6 @@
 import React from 'react'
 
-function BotCard({ bot, enlistBot, releaseBot, dischargeBot , buttonText, onClickButton,showEnlistButton,  showSpecsView }) {
+function BotCard({ bot, enlistBot, releaseBot, dischargeBot , buttonText, onClickButton,showEnlistButton }) {
     
     //function to handle setBot
     const handleEnlist = () => {
@@ -21,31 +21,17 @@ function BotCard({ bot, enlistBot, releaseBot, dischargeBot , buttonText, onClic
     <img src={bot.avatar_url} alt={bot.name} />
     <h3>{bot.name}</h3>
     <p>Class: {bot.bot_class}</p>
+    <p>Health: {bot.health}</p>
+    <p>Damage: {bot.damage}</p>
+    <p>Armor: {bot.armor}</p>
 
-
-    {onClickButton && (
-        <button onClick={onClickButton}>
-          {buttonText}
-        </button>
-      )}
-
-    {showSpecsView && (
-        <div>
-          {/* Additional descriptions only available in "Show Specs" view */}
-        <p>Health: {bot.health}</p>
-        <p>Damage: {bot.damage}</p>
-        <p>Armor: {bot.armor}</p>
-        <p>Created at: {bot.created_at}</p>
-        <p>Updated at: {bot.updated_at}</p>
-        </div>
-    )}
     
     
     {enlistBot &&   (
         <button onClick={handleEnlist}> Enlist </button> )}
 
     {releaseBot && <button onClick={handleRelease}>Release</button>}
-    {dischargeBot && <button onClick={handleDischarge}>Discharge Forever</button>}
+    {dischargeBot && <button onClick={handleDischarge}>Delete</button>}
 
 </div>
 );
