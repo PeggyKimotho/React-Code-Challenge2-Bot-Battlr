@@ -1,41 +1,26 @@
-import React, { useState, useEffect } from "react"
-import '../App.css';
+import React from 'react'
+import BotCard from './BotCard';
 
-function  BotCollection({ onEnlist }) {
+function BotCollection({ bots, enlistBot, onSelectBot }) {
 
-    const [bots, setBots] = useState([])
-
-useEffect(() => {
-  fetch('http://localhost:3000/bots')
-  .then(response => response.json())
-  .then((data) => setBots(data))
-}, []);
-
-
-return (
+  return (
+    
     <div>
-        <h2>Bot Collection</h2>
+    <h2>Available Bots</h2>
     <div className="bot-list-container">
-            {bots.map((bot) => (
-                <div key={bot.id} 
-                className="bot-card" 
-                onClick={() => onEnlist(bot)}
-                >
-                    <img src={bot.avatar_url} alt={bot.name} />
-                    <h3>{bot.name}</h3>
-                    <p>Health: {bot.health}</p>
-                    <p>Damage: {bot.damage}</p>
-                    <p>Armor: {bot.armor}</p>
-                    <p>Class: {bot.bot_class}</p>
-                    <p>Catchphrase: {bot.catchphrase}</p>
-                    
-                     </div>
+      {bots.map((bot) => (
+          <BotCard 
+          key={bot.id} 
+          bot={bot} 
+          enlistBot={enlistBot}
+          buttonText="Show Specs"
+          onClickButton={() => onSelectBot(bot)}
+          
+          />
         ))}
-        
+        </div>
     </div>
-    </div>
-)
-
+  )
 }
 
 export default BotCollection;
